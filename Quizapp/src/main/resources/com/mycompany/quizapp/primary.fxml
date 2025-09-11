@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="TOP_CENTER" prefHeight="306.0" prefWidth="309.0" spacing="20.0" styleClass="Main" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.quizapp.PrimaryController">
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+   <children>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subject" text="Quiz App" />
+      <Button mnemonicParsing="false" onAction="#handleQuestionManagement" text="Quản Lý Câu Hỏi" />
+      <Button layoutX="112.0" layoutY="99.0" mnemonicParsing="false" onAction="#handlePractice" text="Luyện Tập" />
+      <Button layoutX="112.0" layoutY="144.0" mnemonicParsing="false" text="Thi" />
+      <Button layoutX="112.0" layoutY="190.0" mnemonicParsing="false" text="Đăng Ký" />
+      <Button layoutX="112.0" layoutY="144.0" mnemonicParsing="false" text="Đăng Nhập" />
+   </children>
+</VBox>

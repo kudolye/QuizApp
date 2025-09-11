@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="459.0" prefWidth="479.0" styleClass="Main" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.quizapp.QuestionController">
+   <children>
+      <Text nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subject" text="Quản Lý Câu Hỏi" />
+      <TextField alignment="TOP_LEFT" prefHeight="78.0" prefWidth="590.0" promptText="Nội dung câu hỏi." styleClass="button" />
+      <HBox prefHeight="37.0" prefWidth="297.0" styleClass="Main">
+         <children>
+            <ComboBox prefWidth="150.0" promptText="Doanh Mục" />
+            <ComboBox fx:id="cbCat" prefWidth="150.0" promptText="Độ Khó" />
+         </children>
+      </HBox>
+      <VBox prefHeight="224.0" prefWidth="104.0">
+         <children>
+            <HBox prefHeight="30.0" prefWidth="446.0" styleClass="Main">
+               <children>
+                  <RadioButton layoutX="10.0" layoutY="10.0" mnemonicParsing="false" styleClass="Main" />
+                  <TextField prefHeight="33.0" prefWidth="157.0" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="446.0" styleClass="Main">
+               <children>
+                  <RadioButton layoutX="10.0" layoutY="10.0" mnemonicParsing="false" styleClass="Main" />
+                  <TextField prefHeight="33.0" prefWidth="157.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="24.0" prefWidth="452.0" styleClass="Main">
+               <children>
+                  <Button mnemonicParsing="false" text="Thêm câu hỏi" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</VBox>
