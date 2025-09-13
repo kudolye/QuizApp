@@ -5,10 +5,10 @@
 package com.mycompany.quizapp;
 
 import com.hnl.pojo.Category;
+import com.hnl.services.CategoryServices;
 import com.hnl.utils.JdbcConnector;
 import java.net.URL;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -28,7 +28,11 @@ import javafx.scene.control.ComboBox;
  * @author Luyen
  */
 public class QuestionController implements Initializable {
-    @FXML private ComboBox<Category> cbCat; 
+
+    @FXML
+    private ComboBox<Category> cbCat;
+    private static final CategoryServices cateservices=new CategoryServices();
+
     /**
      * Initializes the controller class.
      *
@@ -37,28 +41,12 @@ public class QuestionController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+
         try {
-            //nap Drive
-            
-            try ( //mo ket noi
-                    Connection conn=JdbcConnector.GetInstance().connect()) {
-                //truy van du lieu
-                Statement stm = conn.createStatement();
-                ResultSet rs=stm.executeQuery("SELECT * FROM category");
-                List<Category> Cates=new ArrayList<>();
-                while(rs.next()){
-                    
-                    int id=rs.getInt("id");
-                    String name=rs.getString("name");
-                    Category c=new Category(id,name);
-                    Cates.add(c );
-                }
-                //dong
-                conn.close();
-                this.cbCat.setItems(FXCollections.observableArrayList(Cates));
-            }
-        } catch ( SQLException ex) {
+            this.cbCat.setItems(FXCollections.observableArrayList(cateservices.GetCates()));
+        } catch (SQLException ex) {
             Logger.getLogger(QuestionController.class.getName()).log(Level.SEVERE, null, ex);
         }
+
     }
 }
